@@ -51,7 +51,7 @@ namespace SEImageConverter.Resources.Windows
                 color.Settings.SetDefine(MagickFormat.Dds, "fast-mipmaps", "true");
                 color.Settings.SetDefine(MagickFormat.Dds, "mipmaps", "10");
                 color.Settings.SetDefine(MagickFormat.Dds, "cluster-fit", "true");
-                color.Write(MyImagePath + "_c.dds");
+                color.Write(MyImagePath + ".dds");
 
                 color.Dispose();
             }
