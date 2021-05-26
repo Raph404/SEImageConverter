@@ -35,15 +35,16 @@ namespace SEImageConverter.Resources.Windows
 
             using (MagickImage color = new MagickImage(image.Clone()))
             {
-                int width = Math.Min(color.Height, color.Width) + 2;
-                int length = Math.Max(color.Height, color.Width) + 2;
+                int width = color.Width;
+                int height = color.Height;
+
                 width -= (width % 4);
-                length -= (length % 4);
+                height -= (height % 4);
 
                 color.Format = MagickFormat.Png32;
                 
-                color.Extent(width, length, Gravity.Center, new MagickColor(0, 0, 0, 0));
-
+                color.Extent(width, height, Gravity.Center, new MagickColor(0, 0, 0, 0));
+                
                 color.ColorAlpha(MagickColors.None);
 
                 color.Format = MagickFormat.Dds;
